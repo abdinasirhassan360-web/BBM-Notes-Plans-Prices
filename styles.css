@@ -1,115 +1,159 @@
+/* General page styling */
 body {
-  font-family: Arial, sans-serif;
-  background: #f9f9f9;
-  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  background: #f7f9fc;
+  color: #333;
 }
 
-.pricing-table {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.plan {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  flex: 1;
-  min-width: 280px;
-  max-width: 320px;
-  padding: 20px;
+/* Pricing section */
+.pricing {
   text-align: center;
+  padding: 3rem 1rem;
+}
+
+.pricing h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.pricing p {
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+/* Toggle buttons */
+.toggle {
+  margin-bottom: 2rem;
+}
+
+.toggle button {
+  background: #fff;
+  border: 2px solid #0077ff;
+  color: #0077ff;
+  padding: 0.6rem 1.2rem;
+  margin: 0 0.3rem;
+  cursor: pointer;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.toggle button.active {
+  background: #0077ff;
+  color: #fff;
+}
+
+/* Cards container */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Single card */
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 300px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #222;
+}
+
+.card p {
+  color: #555;
+  margin: 0.5rem 0 1rem;
+}
+
+/* Feature list inside cards */
+.features {
+  text-align: left;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.features li {
+  margin: 0.3rem 0;
+  padding-left: 1.2rem;
   position: relative;
 }
 
-.plan h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.features li::before {
+  content: "✔";
+  color: green;
+  position: absolute;
+  left: 0;
 }
 
+/* Price styling */
 .price {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  color: #27ae60;
-  margin: 10px 0;
+  margin: 1rem 0;
+  color: #0077ff;
 }
 
-.old-price {
-  text-decoration: line-through;
-  color: #999;
+/* Discounted price */
+.price del {
+  color: #888;
   font-size: 1rem;
+  margin-right: 0.4rem;
 }
 
-.discount {
-  background: #e74c3c;
+.price .discount {
+  background: #ff5252;
   color: #fff;
-  font-size: 0.9rem;
-  padding: 5px 10px;
-  border-radius: 6px;
-  position: absolute;
-  top: 15px;
-  right: 15px;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  border-radius: 5px;
+  margin-left: 0.3rem;
 }
 
-.badge {
-  background: #27ae60;
+/* Buttons */
+.card button {
+  background: #0077ff;
   color: #fff;
-  font-size: 0.85rem;
-  padding: 6px 12px;
-  border-radius: 6px;
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
   font-weight: bold;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background 0.3s ease;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-  text-align: left;
+.card button:hover {
+  background: #005bb5;
 }
 
-ul li {
-  margin: 8px 0;
-}
-
-.btn-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #27ae60;
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.2s ease-in-out;
-}
-
-.btn:hover {
-  background: #219150;
-}
-
-.btn.semester {
-  background: #f39c12;
-}
-
-.btn.semester:hover {
-  background: #d98208;
-}
-
+/* Popular ribbon */
 .popular {
-  border: 2px solid #27ae60;
-  transform: scale(1.05);
+  border: 2px solid #0077ff;
+}
+
+.ribbon {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #ff5252;
+  color: #fff;
+  padding: 5px 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 5px;
 }

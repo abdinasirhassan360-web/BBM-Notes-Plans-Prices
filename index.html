@@ -3,70 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notes Pricing</title>
+  <title>Plans & Pricing</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1 style="text-align:center; margin-bottom: 30px;"> Plans & Pricing</h1>
 
-  <div class="pricing-table">
-    
-    <!-- Basic -->
-    <div class="plan">
-      <h2>Basic</h2>
-      <span class="old-price">Ksh 2,850</span>
-      <div class="price">Ksh 2,250</div>
-      <span class="discount">Save 20%</span>
-      <ul>
-        <li>✔ Weekly Notes</li>
-        <li>✔ Organized Summaries</li>
-      </ul>
-      <div class="btn-group">
-        <a href="https://wa.me/254741769051?text=Hi%2C%20I%20want%20the%20Basic%20Weekly%20Plan%20(Ksh%20200)." class="btn">Weekly - Ksh 200</a>
-        <a href="https://wa.me/254741769051?text=Hi%2C%20I%20want%20the%20Basic%20Monthly%20Plan%20(Ksh%20700)." class="btn">Monthly - Ksh 700</a>
-        <a href="https://wa.me/254741769051?text=Hi%2C%20I%20want%20the%20Basic%20Semester%20Plan%20(Ksh%202%2C250)." class="btn semester">Semester - Ksh 2,250</a>
-      </div>
-    </div>
-    
-    <!-- Standard -->
-    <div class="plan popular">
-      <div class="badge">⭐ Most Popular</div>
-      <h2>Standard</h2>
-      <span class="old-price">Ksh 5,000</span>
-      <div class="price">Ksh 3,500</div>
-      <span class="discount">Save 30%</span>
-      <ul>
-        <li>✔ Weekly Notes</li>
-        <li>✔ Q&A Sets</li>
-        <li>✔ Flashcards & Cheat Sheets</li>
-        <li>✔ Monthly Revision Recap</li>
-      </ul>
-      <div class="btn-group">
-        <a href="https://wa.me/254741769051?text=Hi%2C%20I%20want%20the%20Standard%20Weekly%20Plan%20(Ksh%20350)." class="btn">Weekly - Ksh 350</a>
-        <a href="https://wa.me/254741769051?text=Hi%2C%20I%20want%20the%20Standard%20Monthly%20Plan%20(Ksh%201%2C200)." class="btn">Monthly - Ksh 1,200</a>
-        <a href="https://wa.me/254741769051?text=Hi%2C%20I%20want%20the%20Standard%20Semester%20Plan%20(Ksh%203%2C500)." class="btn semester">Semester - Ksh 3,500</a>
-      </div>
-    </div>
-    
-    <!-- Premium -->
-    <div class="plan">
-      <h2>Premium</h2>
-      <span class="old-price">Ksh 7,500</span>
-      <div class="price">Ksh 5,000</div>
-      <span class="discount">Save 35%</span>
-      <ul>
-        <li>✔ Everything in Standard</li>
-        <li>✔ Exam Prep Kit + Past Papers</li>
-        <li>✔ 2-Day Exam Camp</li>
-        <li>✔ Weekend 1-on-1 Support</li>
-      </ul>
-      <div class="btn-group">
-        <a href="https://wa.me/254741769051?text=Hi%2C%20I%20want%20the%20Premium%20Weekly%20Plan%20(Ksh%20500)." class="btn">Weekly - Ksh 500</a>
-        <a href="https://wa.me/254741769051?text=Hi%2C%20I%20want%20the%20Premium%20Monthly%20Plan%20(Ksh%201%2C800)." class="btn">Monthly - Ksh 1,800</a>
-        <a href="https://wa.me/254741769051?text=Hi%2C%20I%20want%20the%20Premium%20Semester%20Plan%20(Ksh%205%2C000)." class="btn semester">Semester - Ksh 5,000</a>
-      </div>
+  <section class="pricing">
+    <h1>Plans & Pricing</h1>
+    <p>Get high-quality notes & support, tailored to your learning needs</p>
+
+    <!-- Toggle buttons -->
+    <div class="toggle">
+      <button class="active" onclick="showPlans('weekly')">Weekly</button>
+      <button onclick="showPlans('monthly')">Monthly</button>
+      <button onclick="showPlans('semester')">Semester</button>
     </div>
 
-  </div>
+    <!-- Pricing Cards -->
+    <div class="cards">
+
+      <!-- Basic Plan -->
+      <div class="card">
+        <h2>Basic</h2>
+        <p>1 Unit • Notes + Q&A</p>
+        <div class="price">
+          <span class="weekly">Ksh 800</span>
+          <span class="monthly" style="display:none;">Ksh 2,400</span>
+          <span class="semester" style="display:none;">Ksh 6,000</span>
+        </div>
+        <ul class="features">
+          <li>Full notes for 1 unit</li>
+          <li>Weekly Q&A support</li>
+          <li>Exam-focused summaries</li>
+        </ul>
+        <button onclick="choosePlan('Basic')">Get this Plan</button>
+      </div>
+
+      <!-- Standard Plan -->
+      <div class="card popular">
+        <div class="ribbon">Most Popular</div>
+        <h2>Standard</h2>
+        <p>3 Units • Notes + Q&A</p>
+        <div class="price">
+          <span class="weekly">
+            <del>Ksh 2,400</del> Ksh 1,800 
+            <span class="discount">25% OFF</span>
+          </span>
+          <span class="monthly" style="display:none;">
+            <del>Ksh 7,200</del> Ksh 5,400 
+            <span class="discount">25% OFF</span>
+          </span>
+          <span class="semester" style="display:none;">
+            <del>Ksh 18,000</del> Ksh 12,000 
+            <span class="discount">30% OFF</span>
+          </span>
+        </div>
+        <ul class="features">
+          <li>Notes for 3 units</li>
+          <li>Weekly Q&A support</li>
+          <li>Exam-focused summaries</li>
+          <li>Priority assistance</li>
+        </ul>
+        <button onclick="choosePlan('Standard')">Get this Plan</button>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="card">
+        <h2>Premium</h2>
+        <p>All 7 Units • Notes + Q&A</p>
+        <div class="price">
+          <span class="weekly">
+            <del>Ksh 5,600</del> Ksh 3,500 
+            <span class="discount">40% OFF</span>
+          </span>
+          <span class="monthly" style="display:none;">
+            <del>Ksh 16,800</del> Ksh 9,800 
+            <span class="discount">40% OFF</span>
+          </span>
+          <span class="semester" style="display:none;">
+            <del>Ksh 42,000</del> Ksh 21,000 
+            <span class="discount">50% OFF</span>
+          </span>
+        </div>
+        <ul class="features">
+          <li>Notes for all 7 units</li>
+          <li>Weekly Q&A support</li>
+          <li>Exam-focused summaries</li>
+          <li>Free 1-on-1 session</li>
+          <li>Lifetime updates</li>
+        </ul>
+        <button onclick="choosePlan('Premium')">Get this Plan</button>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
