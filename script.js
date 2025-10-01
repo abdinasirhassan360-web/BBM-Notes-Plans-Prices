@@ -22,16 +22,19 @@ let mode = "weekly"; // default
 function setMode(selected) {
   mode = selected;
 
+  // Update active button
   document.querySelectorAll(".toggle button").forEach(btn => btn.classList.remove("active"));
   document.querySelector(`.toggle button[onclick="setMode('${selected}')"]`).classList.add("active");
 
-  updatePrice("basic", window[mode].basic);
-  updatePrice("standard", window[mode].standard);
-  updatePrice("premium", window[mode].premium);
+  // Update prices for all plans
+  updatePrice("basic", weekly.basic, monthly.basic, semester.basic);
+  updatePrice("standard", weekly.standard, monthly.standard, semester.standard);
+  updatePrice("premium", weekly.premium, monthly.premium, semester.premium);
 }
 
-function updatePrice(plan, data) {
+function updatePrice(plan, weeklyData, monthlyData, semesterData) {
   const priceDiv = document.getElementById(`price-${plan}`);
+  const data = mode === "weekly" ? weeklyData : mode === "monthly" ? monthlyData : semesterData;
   priceDiv.innerHTML = `
     ${data.old ? `<span class="old">${data.old}</span>` : ""}
     <span class="new">${data.new}</span>
@@ -40,12 +43,14 @@ function updatePrice(plan, data) {
 }
 
 function sendWhatsApp(plan) {
-  let phone = "254741769051"; // replace with your WhatsApp number
-  let data = window[mode][plan.toLowerCase()];
-  let price = data.new;
+  const phone = "254741769051"; // Replace with your WhatsApp number
+  const data = mode === "weekly" ? weekly[plan.toLowerCase()] : 
+               mode === "monthly" ? monthly[plan.toLowerCase()] : 
+               semester[plan.toLowerCase()];
+  const price = data.new;
 
-  let message = `Hello, I am interested in the ${plan} Plan (${mode.toUpperCase()}) at ${price}. Please guide me on how to proceed.`;
-  let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  const message = `Hello, I am interested in the ${plan} Plan (${mode.toUpperCase()}) at ${price}. Please guide me on how to proceed.`;
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
 }
 
