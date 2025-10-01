@@ -3,98 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plans & Pricing</title>
+  <title>Study Plan Pricing</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header>
+    <h1>Choose Your Study Plan</h1>
+    <p>Flexible pricing to fit your needs — Weekly, Monthly, or Semester</p>
+  </header>
 
+  <!-- Toggle Buttons -->
+  <div class="toggle">
+    <button class="active" onclick="setMode('weekly')">Weekly</button>
+    <button onclick="setMode('monthly')">Monthly</button>
+    <button onclick="setMode('semester')">Semester</button>
+  </div>
+
+  <!-- Pricing Cards -->
   <section class="pricing">
-    <h1>Plans & Pricing</h1>
-    <p>Get high-quality notes & support, tailored to your learning needs</p>
-
-    <!-- Toggle buttons -->
-    <div class="toggle">
-      <button class="active" onclick="showPlans('weekly')">Weekly</button>
-      <button onclick="showPlans('monthly')">Monthly</button>
-      <button onclick="showPlans('semester')">Semester</button>
+    <!-- Basic -->
+    <div class="card">
+      <h2>Basic</h2>
+      <p>Light Support, Starter Pack</p>
+      <div class="price" id="price-basic">
+        <span class="new">Ksh 200 / week</span>
+      </div>
+      <ul class="features">
+        <li>Weekly summarized notes</li>
+        <li>Practice Q&A (short)</li>
+        <li>Cheatsheets only</li>
+        <li>No one-on-one help</li>
+        <li>No access to exam CATs & Past Papers</li>
+      </ul>
+      <button class="btn" onclick="sendWhatsApp('Basic')">Get This Plan</button>
+      <p class="badge">💬 Chat on WhatsApp</p>
     </div>
 
-    <!-- Pricing Cards -->
-    <div class="cards">
-
-      <!-- Basic Plan -->
-      <div class="card">
-        <h2>Basic</h2>
-        <p>1 Unit • Notes + Q&A</p>
-        <div class="price">
-          <span class="weekly">Ksh 800</span>
-          <span class="monthly" style="display:none;">Ksh 2,400</span>
-          <span class="semester" style="display:none;">Ksh 6,000</span>
-        </div>
-        <ul class="features">
-          <li>Full notes for 1 unit</li>
-          <li>Weekly Q&A support</li>
-          <li>Exam-focused summaries</li>
-        </ul>
-        <button onclick="choosePlan('Basic')">Get this Plan</button>
+    <!-- Standard -->
+    <div class="card popular">
+      <div class="ribbon">Most Popular</div>
+      <h2>Standard</h2>
+      <p>Medium Effort, Medium Scale</p>
+      <div class="price" id="price-standard">
+        <span class="old">Ksh 600</span>
+        <span class="new">Ksh 500 / week</span>
+        <span class="discount">Bundle Save</span>
       </div>
+      <ul class="features">
+        <li>Weekly summarized notes + Q&A practice</li>
+        <li>Revision Flashcards & Cheatsheets</li>
+        <li>Occasional assignment tips</li>
+        <li>Access to past CATs and exam papers</li>
+      </ul>
+      <button class="btn" onclick="sendWhatsApp('Standard')">Get This Plan</button>
+      <p class="badge">💬 Chat on WhatsApp</p>
+    </div>
 
-      <!-- Standard Plan -->
-      <div class="card popular">
-        <div class="ribbon">Most Popular</div>
-        <h2>Standard</h2>
-        <p>3 Units • Notes + Q&A</p>
-        <div class="price">
-          <span class="weekly">
-            <del>Ksh 2,400</del> Ksh 1,800 
-            <span class="discount">25% OFF</span>
-          </span>
-          <span class="monthly" style="display:none;">
-            <del>Ksh 7,200</del> Ksh 5,400 
-            <span class="discount">25% OFF</span>
-          </span>
-          <span class="semester" style="display:none;">
-            <del>Ksh 18,000</del> Ksh 12,000 
-            <span class="discount">30% OFF</span>
-          </span>
-        </div>
-        <ul class="features">
-          <li>Notes for 3 units</li>
-          <li>Weekly Q&A support</li>
-          <li>Exam-focused summaries</li>
-          <li>Priority assistance</li>
-        </ul>
-        <button onclick="choosePlan('Standard')">Get this Plan</button>
+    <!-- Premium -->
+    <div class="card premium">
+      <h2>Premium</h2>
+      <p>High Effort, All-Inclusive</p>
+      <div class="price" id="price-premium">
+        <span class="old">Ksh 1,400</span>
+        <span class="new">Ksh 900 / week</span>
+        <span class="discount">35% OFF</span>
       </div>
-
-      <!-- Premium Plan -->
-      <div class="card">
-        <h2>Premium</h2>
-        <p>All 7 Units • Notes + Q&A</p>
-        <div class="price">
-          <span class="weekly">
-            <del>Ksh 5,600</del> Ksh 3,500 
-            <span class="discount">40% OFF</span>
-          </span>
-          <span class="monthly" style="display:none;">
-            <del>Ksh 16,800</del> Ksh 9,800 
-            <span class="discount">40% OFF</span>
-          </span>
-          <span class="semester" style="display:none;">
-            <del>Ksh 42,000</del> Ksh 21,000 
-            <span class="discount">50% OFF</span>
-          </span>
-        </div>
-        <ul class="features">
-          <li>Notes for all 7 units</li>
-          <li>Weekly Q&A support</li>
-          <li>Exam-focused summaries</li>
-          <li>Free 1-on-1 session</li>
-          <li>Lifetime updates</li>
-        </ul>
-        <button onclick="choosePlan('Premium')">Get this Plan</button>
-      </div>
-
+      <ul class="features">
+        <li>All Standard features</li>
+        <li>Personalized 1-on-1 help</li>
+        <li>Detailed assignment support</li>
+        <li>Full exam preparation pack</li>
+        <li>Priority WhatsApp support</li>
+        <li>🚀 Perfect for serious learners</li>
+      </ul>
+      <button class="btn" onclick="sendWhatsApp('Premium')">Get This Plan</button>
+      <p class="badge">💬 Chat on WhatsApp</p>
     </div>
   </section>
 
