@@ -17,59 +17,64 @@
       <button onclick="setMode('semester')">Semester</button>
     </div>
 
-<!-- Basic -->
-<div class="card">
-  <h2>Basic <span class="discount-badge" id="basic-badge"></span></h2>
-  <p class="price">
-    <span class="old-price" id="basic-old"></span>
-    <span id="basic-price"></span>
-  </p>
-  <ul>
-    <li>Weekly summarized notes</li>
-    <li>Access to basic past papers</li>
-    <li>Past CATs paper access</li>
-    <li>Maximising exam marks</li>
-  </ul>
-  <button onclick="sendWhatsApp('Basic')">Get This Plan</button>
-</div>
+    <!-- Cards wrapper -->
+    <div class="cards">
 
-<!-- Standard -->
-<div class="card">
-  <h2>Standard <span class="discount-badge" id="standard-badge"></span></h2>
-  <p class="price">
-    <span class="old-price" id="standard-old"></span>
-    <span id="standard-price"></span>
-  </p>
-  <ul>
-    <li>Weekly summarized notes + Q&A practice</li>
-    <li>Flashcards OR cheatsheets</li>
-    <li>Assignment tips (guidance only)</li>
-    <li>Past CATs paper access</li>
-    <li>Maximising exam marks</li>
-  </ul>
-  <button onclick="sendWhatsApp('Standard')">Get This Plan</button>
-</div>
+      <!-- Basic -->
+      <div class="card">
+        <h2>Basic <span class="discount-badge" id="basic-badge"></span></h2>
+        <p class="price">
+          <span class="old-price" id="basic-old"></span>
+          <span id="basic-price"></span>
+        </p>
+        <ul>
+          <li>Weekly summarized notes</li>
+          <li>Access to basic past papers</li>
+          <li>Past CATs paper access</li>
+          <li>Maximising exam marks</li>
+        </ul>
+        <button onclick="sendWhatsApp('Basic')">Get This Plan</button>
+      </div>
 
-<!-- Premium -->
-<div class="card">
-  <h2>Premium <span class="discount-badge" id="premium-badge"></span></h2>
-  <p class="price">
-    <span class="old-price" id="premium-old"></span>
-    <span id="premium-price"></span>
-  </p>
-  <ul>
-    <li>Everything in Standard</li>
-    <li>Exclusive exam revision kit</li>
-    <li>Group revision session online</li>
-    <li>Past CATs paper access</li>
-    <li>Maximising exam marks</li>
-  </ul>
-  <button onclick="sendWhatsApp('Premium')">Get This Plan</button>
-</div>
+      <!-- Standard -->
+      <div class="card">
+        <h2>Standard <span class="discount-badge" id="standard-badge"></span></h2>
+        <p class="price">
+          <span class="old-price" id="standard-old"></span>
+          <span id="standard-price"></span>
+        </p>
+        <ul>
+          <li>Weekly summarized notes + Q&A practice</li>
+          <li>Flashcards OR cheatsheets</li>
+          <li>Assignment tips (guidance only)</li>
+          <li>Past CATs paper access</li>
+          <li>Maximising exam marks</li>
+        </ul>
+        <button onclick="sendWhatsApp('Standard')">Get This Plan</button>
+      </div>
 
+      <!-- Premium -->
+      <div class="card">
+        <h2>Premium <span class="discount-badge" id="premium-badge"></span></h2>
+        <p class="price">
+          <span class="old-price" id="premium-old"></span>
+          <span id="premium-price"></span>
+        </p>
+        <ul>
+          <li>Everything in Standard</li>
+          <li>Exclusive exam revision kit</li>
+          <li>Group revision session online</li>
+          <li>Past CATs paper access</li>
+          <li>Maximising exam marks</li>
+        </ul>
+        <button onclick="sendWhatsApp('Premium')">Get This Plan</button>
+      </div>
+
+    </div> <!-- end .cards -->
+
+  </div> <!-- end .pricing-container -->
 
   <script src="script.js"></script>
 </body>
 </html>
-
 
